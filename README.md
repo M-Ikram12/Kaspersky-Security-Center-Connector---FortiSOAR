@@ -1,24 +1,27 @@
 # FortiSOAR – Kaspersky Security Center Integration Issue Report
 
-This repository documents the issues encountered while integrating **FortiSOAR** with **Kaspersky Security Center**, along with support communication logs and references.
+Kaspersky Security Center makes it easy to manage and secure both physical and virtual endpoints from a single, unified management console.
 
-## Overview
+This FortiSOAR connector enables seamless integration with Kaspersky Security Center to:
 
-The primary goal of this integration was to enable **FortiSOAR** to:
-- Query if a specific host exists in **Kaspersky Security Center (KSC)**
-- Retrieve basic information about that host
+✅ Query if a specific host exists in Kaspersky Security Center (KSC)
 
-> ✅ **Note:** The connector itself had no issue. All problems were caused by misconfigurations, improper user roles, or incorrect input parameters in playbooks.
+✅ Retrieve basic information about that host
 
----
+⚠️ The connector itself have issue. Make sure user have the sufficient user role permissions in Kaspersky.
 
-## 🐞 Reported Issues
+🐞 Reported Issue
+🔐 Access Denied – Error Code 1184
 
-### 🔐 1. Access Denied – Error Code `1184`
-- **Error Message:**
-  ```json
-  {
-    "code": 1184,
-    "message": "Access denied",
-    "module": "KLSTD"
-  }
+
+{
+  "code": 1184,
+  "message": "Access denied",
+  "module": "KLSTD"
+}
+✅ This connector resolves the above issue by ensuring proper handling of Kaspersky API permissions and user roles.
+
+🔗 Connector File: kaspersky-security-center_ikram.tgz
+📥 You can use this file to connect FortiSOAR with Kaspersky — simply upload it in FortiSOAR > Connectors section.
+
+
